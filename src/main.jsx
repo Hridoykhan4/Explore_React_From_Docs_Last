@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home.jsx";
 import About from "./components/About.jsx";
 import Main from "./components/Main.jsx";
+import AboutChild from "./components/AboutChild.jsx";
 
 const router = createBrowserRouter([
   {
@@ -16,30 +17,39 @@ const router = createBrowserRouter([
         element: <Home></Home>,
         children: [
           {
-            path: '/',
-            element: <h2>Hi, I am btn 1</h2>
+            path: "/btn1",
+            element: <h2>Hi, I am btn 1</h2>,
           },
           {
-            path: '/btn2',
-            element: <h2>Hi, I am btn 2</h2>
-          }
-          
-        ]
+            path: "/btn2",
+            element: <h2>Hi, I am btn 2</h2>,
+          },
+        ],
       },
       {
         path: "/about",
         element: <About></About>,
         children: [
-         {
-          // path: '/about',
-          index:true,
-          element: <p>Hi, I am about index true nested</p>
-         },
-         {
-          path: '/about/aboutChild',
-          element: <p>Hi Baby</p>
-         }
-        ]
+          {
+            // path: '/about',
+            index: true,
+            element: <p>Hi, I am about index true nested</p>,
+          },
+          {
+            path: "/about/aboutChild",
+            element: <AboutChild></AboutChild>,
+            children: [
+              {
+                index: true,
+                element: <p>Hii</p>,
+              },
+              {
+                path: "aboutSuperChild",
+                element: <p>Hi, I am super child</p>,
+              },
+            ],
+          },
+        ],
       },
     ],
   },
