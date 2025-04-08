@@ -6,6 +6,7 @@ import Home from "./components/Home.jsx";
 import About from "./components/About.jsx";
 import Main from "./components/Main.jsx";
 import AboutChild from "./components/AboutChild.jsx";
+import MoneyProvider from "./Provider/MoneyProvider.jsx";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <MoneyProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </MoneyProvider>
   </StrictMode>
 );
