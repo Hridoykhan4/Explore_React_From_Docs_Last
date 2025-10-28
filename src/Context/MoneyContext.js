@@ -1,3 +1,5 @@
 import { createContext } from "react";
 
-export const MoneyContext = createContext(0);
+export const MoneyContext = createContext(
+  +(localStorage.getItem("money")) || 0
+);

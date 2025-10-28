@@ -1,4 +1,4 @@
-import { Link, Links, useLocation } from "react-router-dom";
+import { Link, Links, NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const { pathname } = useLocation();
@@ -12,12 +12,19 @@ const Navbar = () => {
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/">Home</NavLink>
           </li>
 
           <li>
-            <Link to="/about">About</Link>
+            <NavLink to="/about">About</NavLink>
           </li>
+
+          
+          <li>
+            <NavLink to="/contact">Contact</NavLink>
+          </li>
+
+
         </ul>
       </div>
     </div>
